@@ -98,11 +98,12 @@ header .nav-bar div:focus{
 }
 
 .btn-sign-try #sign:hover{
+  background-color: rgb(212, 212, 212);
   color:rgb(255, 255, 255);
 }
 
 .btn-sign-try #sign:active{
-  background-color: rgb(212, 212, 212);
-  color: rgb(255, 255, 255);
+  color: rgb(108, 108, 108);
+  box-shadow: inset 0em 0em 5em .7em rgba(245, 245, 245, 0.822);
 }
 
