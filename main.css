@@ -98,8 +98,8 @@ header .nav-bar div:focus{
 }
 
 .btn-sign-try #sign:hover{
-  background-color: rgb(212, 212, 212);
   color:rgb(255, 255, 255);
+  border: 1px solid #000;
 }
 
 .btn-sign-try #sign:active{
@@ -107,3 +107,53 @@ header .nav-bar div:focus{
   box-shadow: inset 0em 0em 5em .7em rgba(245, 245, 245, 0.822);
 }
 
+header .nav-item .tooltip.active,
+header .nav-item .tooltip.active::before{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltip{
+  position: absolute;
+  display: block;
+  opacity: 0;
+  background: #fff;
+  transform: translate(-42%, 15px);
+  padding: 40px;
+  border-radius: 10px;
+  width: 500px;
+  transition: all ease-in .2s !important;
+  pointer-events: none;
+}
+
+.tooltip::before{
+  position: absolute;
+  content: "";
+  opacity: 0;
+  height: 10px;
+  width: 10px;
+  background: #fff;
+  transform: translate(200px, -45px) rotate(45deg);
+  transition: all ease-in .2s !important;
+}
+
+.tooltip .tooltip-item-row{
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.tooltip .tooltip-item-row:not(:last-child){
+  margin-bottom: 25px;
+}
+
+.tooltip .tooltip-item-row p{
+  margin: 0px 0px 5px 0px;
+}
+
+.tooltip .tooltip-item-row .tootlip-title{
+  font-weight: 700;
+}
+
+.tooltip .tooltip-item-row img{
+  margin-right: 10px;
+}
