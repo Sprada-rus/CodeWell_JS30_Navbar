@@ -93,8 +93,18 @@ function setTooltip(node){
 }
 
 function setActionTooltip(event){
-  if(event.target.parentElement.querySelector('.tooltip')){ 
-    event.target.parentElement.querySelector('.tooltip').classList.toggle('active')
+  const targetTooltip = event.target.parentElement.querySelector('.tooltip');
+
+  document.querySelectorAll('.tooltip.active')?.forEach(el => {
+    if(el !== targetTooltip){
+      el.classList.remove('active')
+    }
+  })
+
+  if(!targetTooltip.classList.contains('active')){ 
+    targetTooltip.classList.add('active');
+  } else if(targetTooltip.classList.contains('active')){
+    targetTooltip.classList.remove('active');
   }
 }
 

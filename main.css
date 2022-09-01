@@ -3,6 +3,7 @@
 *{
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  -moz-user-select: none;
 }
 
 body{
@@ -13,6 +14,7 @@ body{
 header, .content-body, footer{
   max-width: 1280px;
   margin: 0 auto;
+  padding: 15px;
 }
 
 header{
@@ -62,14 +64,14 @@ header .nav-bar div:focus{
 .btn-sign-try{
   width: 25%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.btn-sign-try button{
+button{
   padding: 15px 30px;
 }
 
-.btn-sign-try #try{
+#try{
   font-weight: 700;
   font-size: 14px;
   color: #fff;
@@ -79,11 +81,11 @@ header .nav-bar div:focus{
   transition: background ease-in .3s, box-shadow ease-out .2s;
 }
 
-.btn-sign-try #try:hover{
+#try:hover{
   box-shadow: inset 1em 1em .5em 5em rgba(14, 39, 16, 0.548);
 }
 
-.btn-sign-try #try:active{
+#try:active{
   box-shadow: inset 0em 0em 1em .5em rgba(26, 71, 30, 0.822);
 }
 
@@ -156,4 +158,66 @@ header .nav-item .tooltip.active::before{
 
 .tooltip .tooltip-item-row img{
   margin-right: 10px;
+}
+
+.row{
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(108, 108, 108);
+}
+
+.half-width{
+  width: 50%;
+}
+
+.content h1{
+  font-size: 52px;
+  margin-top: 0;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.content p{
+  margin-top: 0;
+}
+
+.y-text{
+  color: rgb(247, 179, 0);
+}
+
+.row img{
+  width: 480px;
+}
+
+.text-row{
+  margin: 25px 0;
+  display: flex;
+}
+
+.text-row img:nth-child(n){
+  display: inline;
+  width: 25px;
+  margin: 0px 5px;
+}
+
+.row.text-center{
+  justify-content: center;
+}
+
+.m-t-100{
+  margin-top: 100px;
+}
+
+.m-tb-50px{
+  margin: 50px 0px;
+}
+
+.row.img-200 img{
+  width: 200px;
+}
+
+.row.logos{
+  justify-content: space-evenly;
 }
