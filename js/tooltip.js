@@ -86,7 +86,16 @@ function setTooltip(node){
     let tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
     // tooltip.setAttribute('data-tooltip-for', node.id)
-    tooltip.innerHTML = mainTooltip[node.id];
+    let btnClose = document.createElement('div');
+    btnClose.className = 'btn-close';
+    let imageClose = document.createElement('img');
+    imageClose.src = 'src/Close.svg';
+    imageClose.onclick = (e) => {
+      tooltip.classList.remove('active');
+    };
+    btnClose.append(imageClose);
+    tooltip.append(btnClose);
+    tooltip.insertAdjacentHTML('beforeend', mainTooltip[node.id]);
     // console.log(node)
     node.append(tooltip);
   } 
@@ -101,15 +110,15 @@ function setActionTooltip(event){
     }
   })
 
-  if(!targetTooltip.classList.contains('active')){ 
-    targetTooltip.classList.add('active');
-  } else if(targetTooltip.classList.contains('active')){
-    targetTooltip.classList.remove('active');
+  if(!targetTooltip?.classList.contains('active')){ 
+    targetTooltip?.classList.add('active');
+  } else if(targetTooltip?.classList.contains('active')){
+    targetTooltip?.classList.remove('active');
   }
 }
 
-let navbar = document.querySelector('header .nav-bar');
-Array.from(navbar.children).forEach(item => {
-  setTooltip(item);
+let navbar = document.querySelectorAll('header .nav-bar .sections .nav-item .nav-item-name');
+Array.from(navbar).forEach(item => {
+  setTooltip(item.parentElement);
   item.addEventListener('click', setActionTooltip)
 })
